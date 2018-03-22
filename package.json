@@ -1,0 +1,30 @@
+{
+  "name": "bulma-navbar",
+  "version": "0.1.0",
+  "description": "Responsive navbar from bulma.io translated to scss and stripped of many color classes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Doanvin/bulma-navbar.git"
+  },
+  "author": "@Doanvin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Doanvin/bulma-navbar/issues"
+  },
+  "homepage": "https://github.com/Doanvin/bulma-navbar#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.2.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "sass-lint": "^1.10.2"
+  }
+}

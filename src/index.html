@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=2.5" />
+  <!-- Title, Description -->
+  <title>Bulma Navbar</title>
+  <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt veritatis cupiditate ducimus modi culpa. Et ducimus excepturi molestiae alias.">
+  <!-- Open Graph Metadata -->
+  <meta property="og:url" content="" />         <!-- PAGE URL -->
+  <meta property="og:type" content="website" /> <!-- TYPE -->
+  <meta property="og:title" content="" />       <!-- TITLE -->
+  <meta property="og:description" content="" /> <!-- DESCRIPTION-->
+  <meta property="og:image" content="" />       <!-- IMAGE URL -->
+  <!-- Stylesheets, Fonts, Neccessary Scripts -->
+  <link rel="stylesheet" href="/css/navbar.min.css">
+  <link rel="stylesheet" href="/css/master.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+  <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
+    <div class="container">
+
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+        </a>
+
+        <div class="navbar-burger"  data-target="navbar-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <!-- children of navbar-menu must be navbar-start and/or navbar-end -->
+      <div class="navbar-menu" id="navbar-menu">
+
+        <!-- navbar items | left side -->
+        <div class="navbar-start">
+          <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                Docs
+              </a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="#">
+                  Overview
+                </a>
+                <a class="navbar-item" href="#">
+                  Elements
+                </a>
+                <a class="navbar-item" href="#">
+                  Components
+                </a>
+                <hr class="navbar-divider">
+                <div class="navbar-item">
+                  Version 0.1.0
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- navbar items | right side -->
+        <div class="navbar-end">
+          <a class="navbar-item is-active" href="/">
+            Home
+          </a>
+          <a class="navbar-item" href="#">
+            About
+          </a>
+          <a class="navbar-item" href="#">
+            Projects
+          </a>
+          <a class="navbar-item" href="#">
+            Contact
+          </a>
+          <div class="navbar-item">
+            <a class="button" href="https://github.com/Doanvin/bulma-navbar" target="_blank">
+              <i class="fa fa-github"></i>Github
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+
+
+  <div class="header-wrap">
+    <header>
+        <div class="header">
+          <h1 class="header-title heading">Bulma Navbar</h1>
+          <div class="intro">
+              <p class="header-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam provident iste aspernatur, incidunt.</p>
+              <a href="//github.com/doanvin/" class="button">Github</a>
+          </div>
+       </div>
+    </header>
+  </div>
+  
+
+
+  <main>
+
+    <section class="">
+
+      <article>
+        <h2 class="heading">Upcoming Events</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi placeat modi voluptatem provident quis vel molestiae doloribus eum itaque ex incidunt, repudiandae tempore, eos, iusto cum. Soluta quaerat sunt et!</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti et officiis quam, consectetur quia culpa! Placeat vel dicta saepe, molestias quia ea. Omnis dolore itaque laboriosam quod quibusdam reprehenderit officia!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet accusantium eius quibusdam eligendi, nostrum earum harum corrupti asperiores laborum, error ipsa expedita vitae perspiciatis dolore ab facere repellat veritatis ea.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati et aliquam pariatur beatae explicabo animi recusandae, maiores autem! Quibusdam repellat voluptates quos tempore sapiente ipsum quas necessitatibus odit vel praesentium.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ad ullam error dolore consequuntur id temporibus numquam, deleniti, perspiciatis sit odit reiciendis. Harum, eos debitis temporibus id neque ea veritatis?</p>
+      </article>
+
+      <aside class="">
+        <h2 class="heading">Sidebar Widgets</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi placeat modi voluptatem provident quis vel molestiae doloribus eum itaque ex incidunt, repudiandae tempore, eos, iusto cum. Soluta quaerat sunt et!</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus ducimus sint reiciendis repellat eius possimus voluptates beatae sunt, voluptatem dolor suscipit nam dolores assumenda molestiae labore facere. Possimus, dolore ipsum.</p>
+      </aside>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+
+        <div class="col is-4">
+        <h5 class="">Section 1 Title</h5>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        </div>
+
+        <div class="col is-4">
+        <h5 class="">Section 2 Title</h5>
+        <ul>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+        </div>
+
+        <div class="col is-4">
+        <h5 class="">Contact Info</h5>
+        <ul class="">
+          <li class=""><a href="mailto:example@email.com">Example@Email.com</a></li>
+          <li class="">444 Road Name Here<br>City, State Zip</li>
+          <li class=""><a href="tel:18475555555">1-847-555-5555</a></li>
+        </ul>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Font link purposely put on bottom -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Varela+Round" rel="stylesheet">
+
+  <!-- Bulma Navbar JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      // Get all "navbar-burger" elements
+      var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+      // Check if there are any navbar burgers
+      if ($navbarBurgers.length > 0) {
+
+        // Add a click event on each of them
+        $navbarBurgers.forEach(function ($el) {
+          $el.addEventListener('click', function () {
+
+            // Get the target from the "data-target" attribute
+            var target = $el.dataset.target;
+            var $target = document.getElementById(target);
+
+            // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+            $el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+
+          });
+        });
+      }
+
+    });
+  </script>
+
+</body>
+
+</html>

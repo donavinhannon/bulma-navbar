@@ -1,0 +1,379 @@
+// HEIGHT, WIDTH, BREAKPOINTS, FONT ============================
+$navbar-breakpoint-max: 1024px !default;          // used for max-width media query
+$navbar-breakpoint-min: 1023px !default;          // used for min-width media query
+$navbar-min-height: 3.25rem !default;             // minimum height for navbar small & large
+$navbar-burger-height-width: 3.25rem !default;    // navbar burger size
+$navbar-img-max-height: 1.75rem !default;         // maximum height for imgs in navbar
+$navbar-font-size: .875rem !default;              // navbar font-size
+$navbar-large-screen-font-size: .875rem !default; // navbar font-size for large screens
+$navbar-font-family: 'Open Sans', sans-serif !default;     // navbar font-family
+
+// COLORS ======================================================
+$nc: #000 !default;    // navbar text color
+$nbc: white !default;  // navbar background color
+
+$nc-item: #000 !default;                         // navbar item text color
+$nc-item-active: #0a0a0a !default;               // navbar item text color while hovering & active item text color while not hovering
+$nbc-item-active-not-hover: whitesmoke !default; // color of active item when not hovering
+$nbc-item-active: darken($nbc-item-active-not-hover, 5) !default;  // color of navbar item while hovering & active item while hovering
+
+$nbc-dropdown: white !default;               // navbar dropdown background color
+$nc-dropdown-carrot: #46aef7 !default;       // navbar dropdown carrot color
+$nc-dropdown-item-active: #46aef7 !default;  // navbar dropdown item text color
+
+$nbc-menu: white !default;                       // small screen menu backround color
+$nbc-burger-hover: rgba(0, 0, 0, 0.05) !default; // navburger background color while hovering
+$nbc-divider: #dbdbdb !default;                  // navbar dropdown hr divider background color
+
+
+// UNIVERSAL STYLES ============================================
+.navbar {
+  background-color: $nbc;
+  color: $nc;
+  font-family: $navbar-font-family;
+  min-height: $navbar-min-height;
+  position: relative;
+
+  > .container {
+    align-items: stretch;
+    display: flex;
+    min-height: $navbar-min-height;
+    width: 100%;
+  }
+
+  &.has-shadow {
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+  }
+
+}
+
+.navbar-brand {
+  align-items: stretch;
+  display: flex;
+  flex-shrink: 0;
+  min-height: $navbar-min-height;
+}
+
+.navbar-burger {
+  cursor: pointer;
+  display: block;
+  height: $navbar-burger-height-width;
+  margin-left: auto;
+  position: relative;
+  width: $navbar-burger-height-width;
+
+  span {
+    background-color: currentColor;
+    display: block;
+    height: 1px;
+    left: 50%;
+    margin-left: -7px;
+    position: absolute;
+    top: 50%;
+    transition: none 86ms ease-out;
+    transition-property: background, left, opacity, transform;
+    width: 15px;
+
+    &:nth-child(1) {
+      margin-top: -6px;
+    }
+
+    &:nth-child(2) {
+      margin-top: -1px;
+    }
+
+    &:nth-child(3) {
+      margin-top: 4px;
+    }
+  }
+
+  &:hover {
+    background-color: $nbc-burger-hover;
+  }
+
+  &.is-active span {
+    &:nth-child(1) {
+      margin-left: -5px;
+      transform: rotate(45deg);
+      transform-origin: left top;
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+    }
+
+    &:nth-child(3) {
+      margin-left: -5px;
+      transform: rotate(-45deg);
+      transform-origin: left bottom;
+    }
+  }
+}
+
+.navbar-menu {
+  display: none;
+}
+
+a.navbar-item {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navbar-item,
+.navbar-link {
+  color: $nc-item;
+  display: block;
+  line-height: 1.5;
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+
+a.navbar-item,
+.navbar-link {
+  &:hover,
+  &.is-active {
+    background-color: $nbc-item-active;
+    color: $nc-item-active;
+  }
+}
+
+a.navbar-item.is-active:not(:hover),
+.navbar-link.is-active:not(:hover) {
+  background-color: $nbc-item-active-not-hover;
+}
+
+.navbar-item {
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  img {
+    max-height: $navbar-img-max-height;
+  }
+
+  &.has-dropdown {
+    padding: 0;
+  }
+}
+
+.navbar-link {
+  padding-right: 2.5em;
+}
+
+.navbar-dropdown {
+  font-size: 0.875rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+
+  .navbar-item {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+.navbar-divider {
+  background-color: $nbc-divider;
+  border: 0;
+  display: none;
+  height: 1px;
+  margin: 0.5rem 0;
+}
+
+
+// SMALL SCREEN SPECIFIC STYLES ==============================
+@media screen and (max-width: $navbar-breakpoint-max) {
+
+  .navbar > .container {
+    display: block;
+    padding: 0;
+  }
+
+  .navbar-brand .navbar-item {
+    align-items: center;
+    display: flex;
+  }
+
+  .navbar-menu {
+    background-color: $nbc-menu;
+    box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
+    padding: 0.5rem 0;
+
+    &.is-active {
+      display: block;
+    }
+  }
+}
+
+
+// LARGE SCREEN SPECIFIC STYLES ==============================
+@media screen and (min-width: $navbar-breakpoint-min) {
+
+  .navbar,
+  .navbar-menu,
+  .navbar-start,
+  .navbar-end {
+    align-items: stretch;
+    display: flex;
+  }
+
+  .navbar {
+    min-height: $navbar-min-height;
+
+    &.is-transparent {
+      a.navbar-item {
+        &:hover,
+        &.is-active {
+          background-color: transparent;
+        }
+      }
+
+      .navbar-link {
+        &:hover,
+        &.is-active {
+          background-color: transparent;
+        }
+      }
+
+      .navbar-item.has-dropdown {
+        &.is-active .navbar-link,
+        &.is-hoverable:hover .navbar-link {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  .navbar-burger {
+    display: none;
+  }
+
+  .navbar-item,
+  .navbar-link {
+    align-items: center;
+    display: flex;
+  }
+
+  .navbar-item {
+    &.has-dropdown {
+      align-items: stretch;
+    }
+
+    &.is-active .navbar-dropdown,
+    &.is-hoverable:hover .navbar-dropdown {
+      display: block;
+    }
+
+    &.is-active .navbar-dropdown.is-boxed,
+    &.is-hoverable:hover .navbar-dropdown.is-boxed {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+  }
+
+  .navbar-link::after {
+    border: 1px solid $nc-dropdown-carrot;
+    border-right: 0;
+    border-top: 0;
+    content: " ";
+    display: block;
+    height: 0.5em;
+    margin-top: -0.375em;
+    pointer-events: none;
+    position: absolute;
+    right: 1.125em;
+    top: 50%;
+    transform: rotate(-45deg);
+    width: 0.5em;
+  }
+
+  .navbar-menu {
+    flex-grow: 1;
+    flex-shrink: 0;
+  }
+
+  .navbar-start {
+    justify-content: flex-start;
+    margin-right: auto;
+  }
+
+  .navbar-end {
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+
+  .navbar-dropdown {
+    background-color: $nbc-dropdown;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top: 1px solid #dbdbdb;
+    box-shadow: 0 8px 8px rgba(10, 10, 10, 0.1);
+    display: none;
+    font-size: 0.875rem;
+    left: 0;
+    min-width: 100%;
+    position: absolute;
+    top: 100%;
+    z-index: 20;
+
+    .navbar-item {
+      padding: .375rem 2rem .375rem 1rem;
+      white-space: nowrap;
+    }
+
+    a.navbar-item {
+      &:hover {
+        background-color: $nbc-item-active;
+        color: $nc-item-active;
+      }
+
+      &.is-active {
+        background-color: $nbc-item-active;
+        color: $nc-dropdown-item-active;
+      }
+    }
+
+    &.is-boxed {
+      border-radius: 5px;
+      border-top: 0;
+      box-shadow: 0 8px 8px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+      display: block;
+      opacity: 0;
+      pointer-events: none;
+      top: calc(100% + (-4px));
+      transform: translateY(-5px);
+      transition-duration: 86ms;
+      transition-property: opacity, transform;
+    }
+
+    &.is-right {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  .navbar-divider {
+    display: block;
+  }
+
+  .container > .navbar {
+    .navbar-brand {
+      margin-left: -1rem;
+    }
+
+    .navbar-menu {
+      margin-right: -1rem;
+    }
+  }
+
+  a.navbar-item.is-active,
+  .navbar-link.is-active {
+    color: $nc-item-active;
+  }
+
+  .navbar-item.has-dropdown {
+    &:hover .navbar-link,
+    &.is-active .navbar-link {
+      background-color: $nbc-item-active;
+    }
+  }
+}

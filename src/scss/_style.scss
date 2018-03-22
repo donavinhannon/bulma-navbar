@@ -1,0 +1,148 @@
+$container-pad-horizontal: 10px !default; // left & right padding on .container
+$button-bg-color: #00d1b2;
+$button-color: #fff;
+
+// MIXINS ==================================================
+@mixin container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 $container-pad-horizontal;
+}
+
+@mixin heading-font {
+  font-family: 'Varela Round', sans-serif;
+  font-weight: 700;
+}
+
+@mixin content-font{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+// TAG STYLES ==============================================
+.container {
+  @include container;
+}
+
+main {
+  @include container;
+  @include content-font;
+}
+
+section,
+header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+article,
+aside {
+  flex-basis: 100%;
+}
+
+@media screen and (min-width: 800px) {
+  aside {
+    flex: 2.5; // 25% of its container
+    padding-left: 20px;
+  }
+
+  article {
+    flex: 7.5; //75% of its container
+    padding-right: 20px;
+  }
+}
+
+// CLASSES =================================================
+.heading {
+  @include heading-font;
+}
+
+.header {
+  flex-basis: 100%;
+  flex: 10;
+
+  &-wrap {
+    @include container;
+    padding-bottom: 5rem;
+  }
+
+  &-title {
+    color: #007F6E;
+    font-size: 5rem;
+    text-align: center;
+    margin: .25em 0 .1em;
+  }
+
+  &-subtitle {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.25rem;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 800px) {
+
+  .intro {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.25rem;
+    text-align: center;
+  }
+}
+
+// FONTAWESOME ============================================
+.fa {
+  padding-right: .5rem;
+}
+
+// BUTTON =================================================
+.button,
+.button--ghost,
+.button--sharp,
+.button--ghost--sharp {
+  @include content-font;
+  align-items: center;
+  box-shadow: none;
+  display: inline-flex;
+  height: 3rem;
+  line-height: 1.5;
+  padding-bottom: calc(0.375rem - 1px);
+  padding-top: calc(0.375rem - 1px);
+  position: relative;
+  vertical-align: top;
+  user-select: none;
+  color: $button-color;
+  cursor: auto;
+  justify-content: center;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+.button,
+.button--ghost,
+.button--sharp,
+.button--ghost--sharp{
+  margin-bottom: .15rem;
+  margin-top: .15rem;
+}
+}
+
+.button {
+  background-color: $button-bg-color;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($button-bg-color, 5);
+  }
+}
